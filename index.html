@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.jpg">
+    <title>Введите ваше имя</title>
+    <link rel="stylesheet" type="text/css" href="styles_log.css">
+    <audio controls>
+        <source src="sound_rain.mp3 " type="audio/mpeg" autoplay="autoplay"/>
+    </audio>
+    <style>
+        html {
+            height: 100%; /* Высота веб-страницы */
+            background: #000 url(pretty_rain.gif)
+            no-repeat right bottom; /* Путь к графическому файлу с фоном */
+        }
+    </style>
+    <script>
+        function saveName(){
+            const name = document.getElementById("nameInput").value;
+            localStorage.setItem("userName", name);
+            window.location.href = "prologue.html";
+        }
+    </script>
+</head>
+<body>
+<div class="start-panel">
+    <h1>Введите ваше имя:</h1>
+    <form>
+        <input type="text" id="nameInput" required>
+        <input type="button" value="Save" onclick="saveName()" />
+    </form>
+</div>
+</body>
+</html>

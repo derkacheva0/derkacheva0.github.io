@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Game</title>
+  <style>
+    .mini-game{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    canvas {
+      border: 1px solid black;
+    }
+    h1{
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<h1>Помогите избавиться от соринки в глазу. Заплачьте или очистите глаз!</h1>
+<div class="mini-game">
+  <canvas id="mazeCanvas" width="400" height="400"></canvas>
+</div>
+<script src="level1.js"></script>
+</body>
+</html>

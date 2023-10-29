@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>end</title>
+  <style>
+    body {
+      background-image: url(rain_lety.gif);
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+    }
+
+    #text-button {
+      font-size: 24px;
+      display: inline-block;
+      cursor: pointer;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.7);
+      color: black;
+      border: none;
+      outline: none;
+      margin-bottom: 15px;
+      bottom: 15px;
+      width: 100vw;
+    }
+  </style>
+</head>
+<body>
+<button id="text-button" onclick="updateText()">Протереть пот со лба</button>
+<script>
+  var texts = [
+    "Зла не хватает на этих задир",
+    "Нет, просто жить, им обязательно надо подпортить жизнь другим",
+    "Интересно, что с теми школьниками???",
+    "Ладно, это не мое дело, надеюсь, что больше их не встречу",
+    "И надо же такое средь бела дны вытворять?",
+    "Мне и так вроде проблем хватало",
+    "Так, не стоит на них внимание обращать",
+    "Такие люди и ситуации не достойны моего внимания",
+    "Я уже успел проголодаться",
+    "Может в буфет зайти, у меня как раз есть время перед парой",
+    "Хмммм",
+    "Никак не могу найти пропуск",
+    "Вот черт, надо будет перепрыгивать турникет"
+  ];
+
+  var textField = document.getElementById('text-button');
+  var currentIndex = 0;
+
+  function updateText() {
+    if (currentIndex < texts.length) {
+      textField.innerHTML = texts[currentIndex];
+      currentIndex++;
+    } else {
+      window.location.href = "level3.html";
+    }
+  }
+
+</script>
+</body>
+</html>

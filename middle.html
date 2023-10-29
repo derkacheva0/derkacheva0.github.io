@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Prologue</title>
+    <style>
+        body {
+            background-image: url(with_train.gif);
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+
+        #text-button {
+            font-size: 24px;
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: black;
+            border: none;
+            outline: none;
+            margin-bottom: 15px;
+            bottom: 15px;
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+<button id="text-button" onclick="updateText()">Протереть глаз</button>
+<script>
+    var texts = [
+        "Так, глаз вроде видит, можно идти дальше",
+        "День только начался, а я уже устал",
+        "Так, если подумать....",
+        "Лабу по вебу я сделал",
+        "Домашку по моэ тоже, и 2 контрольных написл",
+        "ХА-ХА-ХА",
+        "А я не так уж и плоха",
+        "Вся эта нагрузка, затавляет чувствовать меня несчасным?",
+        "Бред полный, мне даже нравится себя нагружать",
+        "Вот день закончится, поеду домой, съем курочку терияки",
+        "Время так быстро бежит, на самом деле",
+        "Вроде только вчера был сентябрь, а уже 30 октября",
+        "АЙ, меня кто-то ударил?"
+    ];
+
+    var textField = document.getElementById('text-button');
+    var currentIndex = 0;
+
+    function updateText() {
+        if (currentIndex < texts.length) {
+            textField.innerHTML = texts[currentIndex];
+            currentIndex++;
+        } else {
+            window.location.href = "level2.html";
+        }
+    }
+
+
+</script>
+</body>
+</html>

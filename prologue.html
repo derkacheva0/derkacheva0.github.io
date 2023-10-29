@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Prologue</title>
+    <style>
+        body {
+            background-image: url(rain_outside.gif);
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+
+        #text-button {
+            font-size: 24px;
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: black;
+            border: none;
+            outline: none;
+            margin-bottom: 15px;
+            bottom: 15px;
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+<button id="text-button" onclick="updateText()">Моя история</button>
+<script>
+    var texts = [
+        "Еще один новый день, опять идти в вуз",
+        "Я, конечно понимаю, что учеба - то важно",
+        "Да, мне и самому интересно, но",
+        ".",
+        "..",
+        "...",
+        "....",
+        "Вся эта нагрузка, затавляет чувствовать меня несчасным",
+        "Но я готов бороться и идти вперед!",
+        "Готов сдавать лабы каждую неделю!",
+        "Или не готов?",
+        "Сколько времени??? 9.30??? надо рочно выходить",
+        "АААААА, МОЙ ГЛАЗ! УБЕИ ЭТУ СОРИНКУ"
+    ];
+
+    var textField = document.getElementById('text-button');
+    var currentIndex = 0;
+
+    function updateText() {
+        if (currentIndex < texts.length) {
+            textField.innerHTML = texts[currentIndex];
+            currentIndex++;
+        } else {
+            window.location.href = "level1.html";
+        }
+    }
+
+
+</script>
+</body>
+</html>
