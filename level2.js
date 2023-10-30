@@ -91,6 +91,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if(player.xp <= 0){
             isGameOver = true;
+            const lvl2_cry = false;
+            localStorage.setItem('lvl2_cry', lvl2_cry);
+            window.location.href = "school.html";
         }
     }
     function drawEnemy1() {
@@ -121,6 +124,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function checkFinish() {
         if (mazeLayout && mazeLayout[player.y] && mazeLayout[player.y][player.x] && ((mazeLayout[player.y][player.x] === 7) || player.xp === 0) || isGameOver === true){
+            const lvl2_cry = true;
+            localStorage.setItem('lvl2_cry', lvl2_cry);
+            console.log(lvl2_cry)
             isGameOver = true;
             window.location.href = "school.html";
         }

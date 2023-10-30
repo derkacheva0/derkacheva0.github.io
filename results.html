@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="level1.js"></script>
-    <script src="results.js"></script>
+    <style>
+        .image-ol {
+            display: none;
+        }
+        .image-do {
+            display: none;
+        }
+        .image-rel {
+            display: none;
+        }
+        .image-st {
+            display: none;
+        }
+        .image-ter {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <audio id="audio-player" src="end.mp3"></audio>
@@ -16,6 +31,29 @@
     // Воспроизводим звук
     audio.play();
 </script>
+
+<h1>Results</h1>
+<p id="username"></p>
+<p id="lvl1_cry"></p>
+<p id="lvl2_cry"></p>
+<p id="lvl3_cry"></p>
+
+<div class="image-ol">
+    <img src="olovsoldier.png" alt="Olov Soldier">
+</div>
+<div class="image-do">
+    <img src="donot.png" alt="do NOT">
+</div>
+<div class="image-rel">
+    <img src="realman.png" alt="Real Man">
+</div>
+<div class="image-st">
+    <img src="study.png" alt="I Study">
+</div>
+<div class="image-ter">
+    <img src="tearsok.png" alt="Tear is OK">
+</div>
+<script src="results.js"></script>
 
 </body>
 </html>

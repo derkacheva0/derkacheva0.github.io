@@ -90,6 +90,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (player.x === police.x && player.y === police.y) {
             isGameOver = true;
+            const lvl3_cry = true;
+            localStorage.setItem('lvl3_cry', lvl3_cry);
             window.location.href = "results.html";
         }
     }
@@ -97,6 +99,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function checkFinish() {
         if (mazeLayout && mazeLayout[player.y] && mazeLayout[player.y][player.x] && (mazeLayout[player.y][player.x] === 7 || mazeLayout[player.y][player.x] === 9)) {
             isGameOver = true;
+            const lvl3_cry = false;
+            localStorage.setItem('lvl3_cry', lvl3_cry);
             window.location.href = "results.html";
         }
     }

@@ -79,22 +79,19 @@ document.addEventListener("DOMContentLoaded", function() {
             if(mazeLayout[player.y][player.x] === 7){
                 const lvl1_cry = true;
                 console.log(lvl1_cry);
-                //saveToLocalStorage('lvl1_cry', lvl1_cry);
+                localStorage.setItem('lvl1_cry', lvl1_cry);
                 new_page();
             }
             if(mazeLayout[player.y][player.x] === 9){
                 const lvl1_cry = false;
                 console.log(lvl1_cry);
-                //saveToLocalStorage('lvl1_cry', lvl1_cry);
+                localStorage.setItem('lvl1_cry', lvl1_cry);
                 new_page();
             }
 
         }
     }
 
-    function saveToLocalStorage(key, value) {
-        localStorage.setItem(key, value);
-    }
 
     document.addEventListener("keydown", function(event) {
         if (isGameOver) return;
