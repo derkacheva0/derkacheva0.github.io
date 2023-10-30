@@ -1,7 +1,8 @@
+//export { lvl1_cry } from "./level1.js";
 document.addEventListener("DOMContentLoaded", function() {
     const canvas = document.getElementById("mazeCanvas");
     const ctx = canvas.getContext("2d");
-
+    //console.log(lvl1_cry);
     let mazeLayout;
     const cellSize = 20;
 
@@ -20,14 +21,9 @@ document.addEventListener("DOMContentLoaded", function() {
         y: 14
     };
     function removeEnemy(enemy) {
-        // Определить координаты соседней клетки в зависимости от направления врага
         const row = enemy.y,
             col = enemy.x;
-
-        // Удалить врага из игрового поля
         mazeLayout[row][col] = 0;
-
-        // Перерисовать поле
         draw();
     }
 
@@ -71,7 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function drawPlayer() {
         const img = new Image();
         img.src = "human.png"
-        ctx.drawImage(img, player.x * cellSize, player.y * cellSize, cellSize, cellSize);
+        ctx.drawImage(img, player.x * cellSize, player.y * cellSize, cellSize, cellSize);const audio = new Audio("puk.mp3");
+        audio.play();
         if (
             ((player.x === enemy1.x && Math.abs(player.y - enemy1.y) === 1) ||
             (player.y === enemy1.y && Math.abs(player.x - enemy1.x) === 1)) &&
@@ -79,6 +76,18 @@ document.addEventListener("DOMContentLoaded", function() {
         ) {
             player.xp -= 10; // урон, который получает игрок
             console.log(`Игрок получил урон. Здоровье: ${player.xp}`);
+            const audio = new Audio("clap.mp3");
+            audio.play();
+        }
+        if (
+            ((player.x === enemy2.x && Math.abs(player.y - enemy2.y) === 1) ||
+                 (player.y === enemy2.y && Math.abs(player.x - enemy2.x) === 1)) &&
+            (player.xp >= 0)
+        ) {
+            player.xp -= 10; // урон, который получает игрок
+            console.log(`Игрок получил урон. Здоровье: ${player.xp}`);
+            const audio = new Audio("clap.mp3");
+            audio.play();
         }
         if(player.xp <= 0){
             isGameOver = true;

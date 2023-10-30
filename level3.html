@@ -25,6 +25,15 @@
 <h1>Нужно добраться до аудитории быстрее, чем меня поймает охраник</h1>
 <div class="mini-game">
     <canvas id="mazeCanvas" width="400" height="400"></canvas>
+    <audio id="audio-player" src="police.mp3"></audio>
+
+    <script>
+        // Получаем ссылку на аудиоэлемент
+        var audio = document.getElementById("audio-player");
+
+        // Воспроизводим звук
+        audio.play();
+    </script>
 </div>
 <script src="level3.js"></script>
 </body>

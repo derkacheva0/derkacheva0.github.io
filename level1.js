@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let mazeLayout;
     const cellSize = 20;
 
-    let lvl1_cry = false;
+    //const lvl1_cry = false;
 
     const player = {
         x: 0,
@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 mazeLayout = data.mazeLayout;
                 console.log(mazeLayout);
                 draw();
+                //checkFinish();
+
             });
     }
 
@@ -52,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function drawPlayer() {
         ctx.fillStyle = "blue";
         ctx.fillRect(player.x * cellSize, player.y * cellSize, cellSize, cellSize);
+        const audio = new Audio("puk.mp3");
+        audio.play();
     }
 
     function draw() {
@@ -66,12 +70,30 @@ document.addEventListener("DOMContentLoaded", function() {
             drawPlayer();
         }
     }
-
+    function new_page(){
+        isGameOver = true;
+        window.location.href = "middle.html";
+    }
     function checkFinish() {
-        if (mazeLayout && mazeLayout[player.y] && mazeLayout[player.y][player.x] && (mazeLayout[player.y][player.x] === 7 || mazeLayout[player.y][player.x] === 9)) {
-            isGameOver = true;
-            window.location.href = "middle.html";
+        if (mazeLayout && mazeLayout[player.y] && mazeLayout[player.y][player.x] ) {
+            if(mazeLayout[player.y][player.x] === 7){
+                const lvl1_cry = true;
+                console.log(lvl1_cry);
+                //saveToLocalStorage('lvl1_cry', lvl1_cry);
+                new_page();
+            }
+            if(mazeLayout[player.y][player.x] === 9){
+                const lvl1_cry = false;
+                console.log(lvl1_cry);
+                //saveToLocalStorage('lvl1_cry', lvl1_cry);
+                new_page();
+            }
+
         }
+    }
+
+    function saveToLocalStorage(key, value) {
+        localStorage.setItem(key, value);
     }
 
     document.addEventListener("keydown", function(event) {
